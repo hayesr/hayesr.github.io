@@ -1,0 +1,59 @@
+// @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900');
+
+$v_space: 2vh;
+
+body {
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
+    "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
+    "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
+    "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+
+  font-size: 1.618em;
+  margin: 0;
+}
+
+#eric {
+  display: flex;
+  justify-content: center;
+  // min-height: 100vh;
+
+  section {
+    padding: 2 * $v_space;
+
+    h1 {
+      margin: 0;
+      font-size: 21vw;
+      font-weight: 900;
+      line-height: 0.9;
+
+      @media(min-width: 800px) { font-size: 20vw; }
+      @media(min-width: 1000px) { font-size: 6.854em; }
+    }
+
+    @media(min-width: 1000px) { max-width: 26em; }
+  }
+
+  header {
+    padding-bottom: 3 * $v_space;
+  }
+}
+
+@supports(mix-blend-mode: lighten) {
+  header {
+    position: relative;
+    color: #000;
+    background: #fff;
+    mix-blend-mode: multiply;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+  }
+}
